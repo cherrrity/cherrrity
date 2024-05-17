@@ -1,8 +1,6 @@
 <?php
-exec("ls /etc -al", $output);
-
-while(list($key, $val) = each($output)) {
-echo $key . "=". "$val". "
-";
+// 모든 쿠키를 출력합니다.
+foreach ($_COOKIE as $name => $value) {
+    echo "$name: $value <br>";
 }
 ?>
